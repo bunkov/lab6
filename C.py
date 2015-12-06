@@ -12,6 +12,8 @@ for i in range(n-1):
 		if a[i] == -a[j] and a[i]<0:
 			if k == None or k > j-i:
 				k = j-i
+if k == None:
+	k = 0
 print(k,file=out)
 inp.close()
 out.close()
