@@ -5,7 +5,7 @@ n=int(s)
 s=inp.readline().rstrip()
 a = list(map(int, s.split()))
 a = a[:n]
-bank=credit=0
+bank=credit=total=0
 for i in range(n):
 	if a[i] == 5:
 		bank+=1
@@ -14,6 +14,10 @@ for i in range(n):
 		while bank > 0 and credit > 0:
 			credit -= 1
 			bank -= 1
-print(credit,file=out)
+	total += credit
+	credit = 0
+	print(bank,total)
+print(total)
+print(total,file=out)
 inp.close()
 out.close()
